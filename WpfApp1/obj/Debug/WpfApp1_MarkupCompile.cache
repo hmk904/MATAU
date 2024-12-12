@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\User\source\repos\WpfApp1\WpfApp1\obj\Debug\
+C:\Users\User\source\repos\hmk904\MATAU\WpfApp1\obj\Debug\
 WpfApp1
 none
 false
 DEBUG;TRACE
-C:\Users\User\source\repos\WpfApp1\WpfApp1\App.xaml
+C:\Users\User\source\repos\hmk904\MATAU\WpfApp1\App.xaml
 7841708190
 
 181355789233
-27-1886258013
+272132882213
 Controls\loginControl.xaml;Controls\signUpControl.xaml;House.xaml;UserLogin.xaml;MainWindow.xaml;Views\DetailView.xaml;Views\MainView.xaml;
 
-False
+True
 
