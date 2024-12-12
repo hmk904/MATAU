@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfApp1.DTO;
 
 namespace WpfApp1.Views
 {
@@ -22,6 +23,12 @@ namespace WpfApp1.Views
         public MainView()
         {
             InitializeComponent();
+
+            // 데이터 바인딩 확인 (테스트용)
+            if (DataContext is UserDTO user)
+            {
+                MessageBox.Show($"사용자 정보: \nID: {user.Roles}\nName: {user.Name}\nNickname: {user.Nickname}");
+            }
         }
     }
 }

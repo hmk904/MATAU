@@ -1,16 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using WpfApp1.DTO;
 
 namespace WpfApp1.Models
 {
     public class SignUpApi : RestApi
     {
-
         public async Task<bool> RegisterUser(SignUpDTO user)
         {
             try
@@ -18,20 +16,19 @@ namespace WpfApp1.Models
                 // JSON 직렬화
                 var options = new JsonSerializerOptions
                 {
-                    PropertyNamingPolicy = JsonNamingPolicy.CamelCase // camelCase로 변환
+                    PropertyNamingPolicy = JsonNamingPolicy.CamelCase
                 };
                 string jsonData = JsonSerializer.Serialize(user, options);
 
                 // HTTP 요청 콘텐츠 생성
                 var content = new StringContent(jsonData, Encoding.UTF8, "application/json");
 
-                // POST 요청 전송
-                HttpResponseMessage response = await httpClient.PostAsync("/api/User/register", content);
+                // POST 요청 전송 (공통 경로 + 추가 엔드포인트)
+                HttpResponseMessage response = await httpClient.PostAsync("register", content);
 
-                // 응답 상태 확인
                 if (response.IsSuccessStatusCode)
                 {
-                    return true; // 요청 성공
+                    return true;
                 }
                 else
                 {
@@ -44,6 +41,5 @@ namespace WpfApp1.Models
                 throw new Exception($"REST API 호출 오류: {ex.Message}");
             }
         }
-
     }
 }

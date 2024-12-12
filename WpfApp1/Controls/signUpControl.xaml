@@ -27,35 +27,38 @@
             <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="400">
                 <TextBlock Text="회원가입" FontSize="30" FontWeight="Bold" Foreground="#4CAF50" Margin="0,0,0,20" />
 
-                <!-- NAME -->
-                <Grid Margin="0,0,0,10">
-                    <TextBox x:Name="txtName" Width="300" Height="40" FontSize="14" />
-                    <TextBlock Text="NAME" Foreground="Gray" VerticalAlignment="Center" Margin="5,0,0,0"
-                               IsHitTestVisible="False" />
-                </Grid>
-
                 <!-- ID -->
                 <Grid Margin="0,0,0,10">
                     <TextBox x:Name="txtID" Width="300" Height="40" FontSize="14" />
                     <TextBlock Text="ID" Foreground="Gray" VerticalAlignment="Center" Margin="5,0,0,0"
-                               IsHitTestVisible="False" />
+               IsHitTestVisible="False" />
                 </Grid>
 
                 <!-- Password -->
                 <Grid Margin="0,0,0,10">
-                    <PasswordBox x:Name="txtPW" Width="300" Height="40" FontSize="14" />
+                    <PasswordBox x:Name="txtPW" Width="300" Height="40" FontSize="14" PasswordChanged="txtPW_PasswordChanged" />
                     <TextBlock Text="PW" Foreground="Gray" VerticalAlignment="Center" Margin="5,0,0,0"
                                IsHitTestVisible="False" />
                 </Grid>
 
                 <!-- Re-Password -->
                 <Grid Margin="0,0,0,10">
-                    <PasswordBox x:Name="txtRePW" Width="300" Height="40" FontSize="14" />
+                    <PasswordBox x:Name="txtRePW" Width="300" Height="40" FontSize="14" PasswordChanged="txtRePW_PasswordChanged" />
                     <TextBlock Text="RE-PW" Foreground="Gray" VerticalAlignment="Center" Margin="5,0,0,0"
                                IsHitTestVisible="False" />
+                    
+                </Grid>
+                <!-- 비밀번호 확인 결과 -->
+                <TextBlock x:Name="lblPasswordCheck" Width="300" FontSize="14" Foreground="Red" Margin="0,0,0,10" />
+
+
+                <!-- NAME -->
+                <Grid Margin="0,0,0,10">
+                    <TextBox x:Name="txtName" Width="300" Height="40" FontSize="14" />
+                    <TextBlock Text="NAME" Foreground="Gray" VerticalAlignment="Center" Margin="5,0,0,0"
+                IsHitTestVisible="False" />
                 </Grid>
 
-                <!-- NICKNAME -->
                 <!-- NICKNAME -->
                 <Grid Margin="0,0,0,10">
                     <Grid.ColumnDefinitions>
@@ -72,7 +75,7 @@
                 </Grid>
 
                 <!-- Buttons -->
-                <Button Content="회원가입" Width="150" Height="40" 
+                <Button x:Name="btnRegister" Content="회원가입" Width="150" Height="40" 
                         Background="#4CAF50" Foreground="White" FontSize="16" 
                         BorderBrush="#4CAF50" BorderThickness="2" Cursor="Hand" Margin="0,0,0,10" 
                         Click="registButton_Click"/>
