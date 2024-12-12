@@ -16,7 +16,7 @@ namespace WpfApp1.Models
         {
             httpClient = new HttpClient
             {
-                BaseAddress = new Uri("http://localhost:5236/swagger/index.html") // API 기본 URL 설정
+                BaseAddress = new Uri("http://3.38.255.138/dev/api/User/") // API 기본 URL 설정
             };
         }
         

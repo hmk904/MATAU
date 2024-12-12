@@ -1,17 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using WpfApp1.Models;
 
 namespace WpfApp1.Controls
@@ -42,8 +32,9 @@ namespace WpfApp1.Controls
 
         private async void registButton_Click(object sender, RoutedEventArgs e)
         {
-            string name = txtName.Text;
+            string name = txtID.Text;
             string password = txtPW.Password;
+            string confirmPassword = txtRePW.Password; // 비밀번호 확인 필드
             string nickname = txtNickName.Text;
 
             // signUp 객체 생성
@@ -64,6 +55,18 @@ namespace WpfApp1.Controls
                 if (success)
                 {
                     MessageBox.Show("회원가입이 완료되었습니다!");
+
+                    DependencyObject parent = this;
+                    while (parent != null && !(parent is UserLogin))
+                    {
+                        parent = LogicalTreeHelper.GetParent(parent);
+                    }
+
+                    if (parent is UserLogin loginTest)
+                    {
+                        loginTest.RightContent.Content = new loginControl();
+                    }
+
                 }
             }
             catch (Exception ex)
@@ -72,5 +75,40 @@ namespace WpfApp1.Controls
             }
         }
 
+        // 비밀번호 확인 실시간 검증
+        private void txtPW_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            PasswordsEquals();
+        }
+
+        private void txtRePW_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            PasswordsEquals();
+        }
+
+        private void PasswordsEquals()
+        {
+            string password = txtPW.Password;
+            string confirmPassword = txtRePW.Password;
+
+            // 비밀번호 확인 결과를 UI에 표시
+            if (string.IsNullOrEmpty(password) || string.IsNullOrEmpty(confirmPassword))
+            {
+                lblPasswordCheck.Text = string.Empty; // 아무 메시지도 표시하지 않음
+                btnRegister.IsEnabled = false; // 회원가입 버튼 비활성화
+            }
+            else if (password == confirmPassword)
+            {
+                lblPasswordCheck.Text = "비밀번호가 일치합니다.";
+                lblPasswordCheck.Foreground = new SolidColorBrush(Colors.Green);
+                btnRegister.IsEnabled = true; // 회원가입 버튼 활성화
+            }
+            else
+            {
+                lblPasswordCheck.Text = "비밀번호가 일치하지 않습니다.";
+                lblPasswordCheck.Foreground = new SolidColorBrush(Colors.Red);
+                btnRegister.IsEnabled = false; // 회원가입 버튼 비활성화
+            }
+        }
     }
 }
