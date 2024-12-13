@@ -11,17 +11,24 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfApp1.DTO;
 
 namespace WpfApp1.Views
 {
     /// <summary>
     /// MainView.xaml에 대한 상호 작용 논리
     /// </summary>
-    public partial class MainView : Window
+    public partial class MyView : Window
     {
-        public MainView()
+        public MyView()
         {
             InitializeComponent();
+
+            // 데이터 바인딩 확인 (테스트용)
+            if (DataContext is UserDTO user)
+            {
+                MessageBox.Show($"사용자 정보: \nID: {user.Roles}\nName: {user.Name}\nNickname: {user.Nickname}");
+            }
         }
     }
 }
