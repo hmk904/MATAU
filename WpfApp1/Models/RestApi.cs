@@ -19,6 +19,6 @@ namespace WpfApp1.Models
                 BaseAddress = new Uri("http://3.38.255.138/dev/api/User/") // API 기본 URL 설정
             };
         }
-        
+
     }
 }
