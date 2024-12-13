@@ -7,84 +7,32 @@
       "RelativeMoniker": "D:0:0:{00A7B5AF-F7AE-4EAA-B27C-7C00E5A84729}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\views\\mainview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{00A7B5AF-F7AE-4EAA-B27C-7C00E5A84729}|WpfApp1\\WpfApp1.csproj|c:\\users\\user\\source\\repos\\hmk904\\matau\\wpfapp1\\views\\mainview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{00A7B5AF-F7AE-4EAA-B27C-7C00E5A84729}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\views\\mainview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{00A7B5AF-F7AE-4EAA-B27C-7C00E5A84729}|WpfApp1\\WpfApp1.csproj|c:\\users\\user\\source\\repos\\hmk904\\matau\\wpfapp1\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00A7B5AF-F7AE-4EAA-B27C-7C00E5A84729}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{00A7B5AF-F7AE-4EAA-B27C-7C00E5A84729}|WpfApp1\\WpfApp1.csproj|c:\\users\\user\\source\\repos\\hmk904\\matau\\wpfapp1\\views\\myview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{00A7B5AF-F7AE-4EAA-B27C-7C00E5A84729}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\views\\myview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{00A7B5AF-F7AE-4EAA-B27C-7C00E5A84729}|WpfApp1\\WpfApp1.csproj|c:\\users\\user\\source\\repos\\hmk904\\matau\\wpfapp1\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{00A7B5AF-F7AE-4EAA-B27C-7C00E5A84729}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{00A7B5AF-F7AE-4EAA-B27C-7C00E5A84729}|WpfApp1\\WpfApp1.csproj|c:\\users\\user\\source\\repos\\hmk904\\matau\\wpfapp1\\views\\myview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{00A7B5AF-F7AE-4EAA-B27C-7C00E5A84729}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\views\\myview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{00A7B5AF-F7AE-4EAA-B27C-7C00E5A84729}|WpfApp1\\WpfApp1.csproj|C:\\Users\\User\\source\\repos\\hmk904\\MATAU\\wpfapp1\\controls\\logincontrol.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{00A7B5AF-F7AE-4EAA-B27C-7C00E5A84729}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\controls\\logincontrol.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{00A7B5AF-F7AE-4EAA-B27C-7C00E5A84729}|WpfApp1\\WpfApp1.csproj|C:\\Users\\User\\source\\repos\\hmk904\\MATAU\\wpfapp1\\controls\\signupcontrol.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{00A7B5AF-F7AE-4EAA-B27C-7C00E5A84729}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\controls\\signupcontrol.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{00A7B5AF-F7AE-4EAA-B27C-7C00E5A84729}|WpfApp1\\WpfApp1.csproj|c:\\users\\user\\source\\repos\\hmk904\\matau\\wpfapp1\\models\\loginapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{00A7B5AF-F7AE-4EAA-B27C-7C00E5A84729}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\models\\loginapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{00A7B5AF-F7AE-4EAA-B27C-7C00E5A84729}|WpfApp1\\WpfApp1.csproj|c:\\users\\user\\source\\repos\\hmk904\\matau\\wpfapp1\\userlogin.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{00A7B5AF-F7AE-4EAA-B27C-7C00E5A84729}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\userlogin.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{00A7B5AF-F7AE-4EAA-B27C-7C00E5A84729}|WpfApp1\\WpfApp1.csproj|c:\\users\\user\\source\\repos\\hmk904\\matau\\wpfapp1\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{00A7B5AF-F7AE-4EAA-B27C-7C00E5A84729}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{00A7B5AF-F7AE-4EAA-B27C-7C00E5A84729}|WpfApp1\\WpfApp1.csproj|c:\\users\\user\\source\\repos\\hmk904\\matau\\wpfapp1\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{00A7B5AF-F7AE-4EAA-B27C-7C00E5A84729}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{00A7B5AF-F7AE-4EAA-B27C-7C00E5A84729}|WpfApp1\\WpfApp1.csproj|c:\\users\\user\\source\\repos\\hmk904\\matau\\wpfapp1\\models\\restapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{00A7B5AF-F7AE-4EAA-B27C-7C00E5A84729}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\models\\restapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{00A7B5AF-F7AE-4EAA-B27C-7C00E5A84729}|WpfApp1\\WpfApp1.csproj|c:\\users\\user\\source\\repos\\hmk904\\matau\\wpfapp1\\resources\\1.jpg||{177559E0-D141-11D0-92DF-00A0C9138C45}",
-      "RelativeMoniker": "D:0:0:{00A7B5AF-F7AE-4EAA-B27C-7C00E5A84729}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\resources\\1.jpg||{177559E0-D141-11D0-92DF-00A0C9138C45}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{00A7B5AF-F7AE-4EAA-B27C-7C00E5A84729}|WpfApp1\\WpfApp1.csproj|c:\\users\\user\\source\\repos\\hmk904\\matau\\wpfapp1\\resources\\2.jpg||{177559E0-D141-11D0-92DF-00A0C9138C45}",
-      "RelativeMoniker": "D:0:0:{00A7B5AF-F7AE-4EAA-B27C-7C00E5A84729}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\resources\\2.jpg||{177559E0-D141-11D0-92DF-00A0C9138C45}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{00A7B5AF-F7AE-4EAA-B27C-7C00E5A84729}|WpfApp1\\WpfApp1.csproj|c:\\users\\user\\source\\repos\\hmk904\\matau\\wpfapp1\\views\\detailview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{00A7B5AF-F7AE-4EAA-B27C-7C00E5A84729}|WpfApp1\\WpfApp1.csproj|C:\\Users\\User\\source\\repos\\hmk904\\MATAU\\wpfapp1\\views\\detailview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{00A7B5AF-F7AE-4EAA-B27C-7C00E5A84729}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\views\\detailview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{00A7B5AF-F7AE-4EAA-B27C-7C00E5A84729}|WpfApp1\\WpfApp1.csproj|C:\\Users\\User\\source\\repos\\hmk904\\MATAU\\wpfapp1\\models\\userapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{00A7B5AF-F7AE-4EAA-B27C-7C00E5A84729}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\models\\userapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{00A7B5AF-F7AE-4EAA-B27C-7C00E5A84729}|WpfApp1\\WpfApp1.csproj|c:\\users\\user\\source\\repos\\hmk904\\matau\\wpfapp1\\views\\mainview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00A7B5AF-F7AE-4EAA-B27C-7C00E5A84729}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\views\\mainview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{00A7B5AF-F7AE-4EAA-B27C-7C00E5A84729}|WpfApp1\\WpfApp1.csproj|C:\\Users\\User\\source\\repos\\hmk904\\MATAU\\wpfapp1\\models\\tokenapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{00A7B5AF-F7AE-4EAA-B27C-7C00E5A84729}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\models\\tokenapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{00A7B5AF-F7AE-4EAA-B27C-7C00E5A84729}|WpfApp1\\WpfApp1.csproj|C:\\Users\\User\\source\\repos\\hmk904\\MATAU\\wpfapp1\\controls\\signupcontrol.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{00A7B5AF-F7AE-4EAA-B27C-7C00E5A84729}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\controls\\signupcontrol.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{00A7B5AF-F7AE-4EAA-B27C-7C00E5A84729}|WpfApp1\\WpfApp1.csproj|c:\\users\\user\\source\\repos\\hmk904\\matau\\wpfapp1\\controls\\logincontrol.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{00A7B5AF-F7AE-4EAA-B27C-7C00E5A84729}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\controls\\logincontrol.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{00A7B5AF-F7AE-4EAA-B27C-7C00E5A84729}|WpfApp1\\WpfApp1.csproj|C:\\Users\\User\\source\\repos\\hmk904\\MATAU\\wpfapp1\\dto\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{00A7B5AF-F7AE-4EAA-B27C-7C00E5A84729}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\dto\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{00A7B5AF-F7AE-4EAA-B27C-7C00E5A84729}|WpfApp1\\WpfApp1.csproj|C:\\Users\\User\\source\\repos\\hmk904\\MATAU\\wpfapp1\\dto\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{00A7B5AF-F7AE-4EAA-B27C-7C00E5A84729}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\dto\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{00A7B5AF-F7AE-4EAA-B27C-7C00E5A84729}|WpfApp1\\WpfApp1.csproj|C:\\Users\\User\\source\\repos\\hmk904\\MATAU\\wpfapp1\\models\\signupapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{00A7B5AF-F7AE-4EAA-B27C-7C00E5A84729}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\models\\signupapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{00A7B5AF-F7AE-4EAA-B27C-7C00E5A84729}|WpfApp1\\WpfApp1.csproj|C:\\Users\\User\\source\\repos\\hmk904\\MATAU\\wpfapp1\\dto\\loginresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{00A7B5AF-F7AE-4EAA-B27C-7C00E5A84729}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\dto\\loginresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{00A7B5AF-F7AE-4EAA-B27C-7C00E5A84729}|WpfApp1\\WpfApp1.csproj|C:\\Users\\User\\source\\repos\\hmk904\\MATAU\\wpfapp1\\views\\myview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{00A7B5AF-F7AE-4EAA-B27C-7C00E5A84729}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\views\\myview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -94,21 +42,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 10,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MainView.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\hmk904\\MATAU\\WpfApp1\\Views\\MainView.xaml.cs",
-              "RelativeDocumentMoniker": "WpfApp1\\Views\\MainView.xaml.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\hmk904\\MATAU\\WpfApp1\\Views\\MainView.xaml.cs",
-              "RelativeToolTip": "WpfApp1\\Views\\MainView.xaml.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAmwBMAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T04:49:04.03Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
@@ -122,6 +57,77 @@
               "Name": "ST:132:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "App.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\hmk904\\MATAU\\WpfApp1\\App.xaml.cs",
+              "RelativeDocumentMoniker": "WpfApp1\\App.xaml.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\hmk904\\MATAU\\WpfApp1\\App.xaml.cs",
+              "RelativeToolTip": "WpfApp1\\App.xaml.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAiwBQAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-13T05:13:28.7Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "App.config",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\hmk904\\MATAU\\WpfApp1\\App.config",
+              "RelativeDocumentMoniker": "WpfApp1\\App.config",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\hmk904\\MATAU\\WpfApp1\\App.config",
+              "RelativeToolTip": "WpfApp1\\App.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-12-13T05:13:26.301Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "App.xaml",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\hmk904\\MATAU\\WpfApp1\\App.xaml",
+              "RelativeDocumentMoniker": "WpfApp1\\App.xaml",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\hmk904\\MATAU\\WpfApp1\\App.xaml",
+              "RelativeToolTip": "WpfApp1\\App.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-12-13T05:13:24.615Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\hmk904\\MATAU\\WpfApp1\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "WpfApp1\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\hmk904\\MATAU\\WpfApp1\\MainWindow.xaml",
+              "RelativeToolTip": "WpfApp1\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-12-13T05:06:43.458Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MainView.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\hmk904\\MATAU\\WpfApp1\\Views\\MainView.xaml.cs",
+              "RelativeDocumentMoniker": "WpfApp1\\Views\\MainView.xaml.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\hmk904\\MATAU\\WpfApp1\\Views\\MainView.xaml.cs",
+              "RelativeToolTip": "WpfApp1\\Views\\MainView.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-13T05:06:32.833Z",
+              "EditorCaption": ""
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "MainView.xaml",
@@ -130,243 +136,32 @@
               "ToolTip": "C:\\Users\\User\\source\\repos\\hmk904\\MATAU\\WpfApp1\\Views\\MainView.xaml",
               "RelativeToolTip": "WpfApp1\\Views\\MainView.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-13T04:48:57.688Z",
+              "WhenOpened": "2024-12-13T04:51:34.681Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "UserLogin.xaml",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\hmk904\\MATAU\\WpfApp1\\UserLogin.xaml",
-              "RelativeDocumentMoniker": "WpfApp1\\UserLogin.xaml",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\hmk904\\MATAU\\WpfApp1\\UserLogin.xaml",
-              "RelativeToolTip": "WpfApp1\\UserLogin.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-13T04:36:24.426Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "1.jpg - Bitmap [200x133, 24\uBE44\uD2B8, JPG]",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\hmk904\\MATAU\\WpfApp1\\Resources\\1.jpg",
-              "RelativeDocumentMoniker": "WpfApp1\\Resources\\1.jpg",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\hmk904\\MATAU\\WpfApp1\\Resources\\1.jpg - Bitmap [200x133, 24\uBE44\uD2B8, JPG]",
-              "RelativeToolTip": "WpfApp1\\Resources\\1.jpg - Bitmap [200x133, 24\uBE44\uD2B8, JPG]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
-              "WhenOpened": "2024-12-13T01:56:53.312Z",
-              "EditorCaption": " - Bitmap [200x133, 24\uBE44\uD2B8, JPG]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "DetailView.xaml",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\hmk904\\MATAU\\WpfApp1\\Views\\DetailView.xaml",
-              "RelativeDocumentMoniker": "WpfApp1\\Views\\DetailView.xaml",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\hmk904\\MATAU\\WpfApp1\\Views\\DetailView.xaml",
-              "RelativeToolTip": "WpfApp1\\Views\\DetailView.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-13T01:56:23.644Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\hmk904\\MATAU\\WpfApp1\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "WpfApp1\\MainWindow.xaml",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\hmk904\\MATAU\\WpfApp1\\MainWindow.xaml",
-              "RelativeToolTip": "WpfApp1\\MainWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-13T01:55:43.165Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MyView.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\hmk904\\MATAU\\WpfApp1\\Views\\MyView.xaml.cs",
-              "RelativeDocumentMoniker": "WpfApp1\\Views\\MyView.xaml.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\hmk904\\MATAU\\WpfApp1\\Views\\MyView.xaml.cs",
-              "RelativeToolTip": "WpfApp1\\Views\\MyView.xaml.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAABcAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T14:26:16.27Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "LoginApi.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\hmk904\\MATAU\\WpfApp1\\Models\\LoginApi.cs",
-              "RelativeDocumentMoniker": "WpfApp1\\Models\\LoginApi.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\hmk904\\MATAU\\WpfApp1\\Models\\LoginApi.cs",
-              "RelativeToolTip": "WpfApp1\\Models\\LoginApi.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T01:59:24.704Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "loginControl.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\hmk904\\MATAU\\WpfApp1\\Controls\\loginControl.xaml.cs",
-              "RelativeDocumentMoniker": "WpfApp1\\Controls\\loginControl.xaml.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\hmk904\\MATAU\\WpfApp1\\Controls\\loginControl.xaml.cs",
-              "RelativeToolTip": "WpfApp1\\Controls\\loginControl.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T14:37:58.951Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "MyView.xaml",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\hmk904\\MATAU\\WpfApp1\\Views\\MyView.xaml",
               "RelativeDocumentMoniker": "WpfApp1\\Views\\MyView.xaml",
               "ToolTip": "C:\\Users\\User\\source\\repos\\hmk904\\MATAU\\WpfApp1\\Views\\MyView.xaml",
               "RelativeToolTip": "WpfApp1\\Views\\MyView.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-12T14:26:22.207Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "UserApi.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\hmk904\\MATAU\\WpfApp1\\Models\\UserApi.cs",
-              "RelativeDocumentMoniker": "WpfApp1\\Models\\UserApi.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\hmk904\\MATAU\\WpfApp1\\Models\\UserApi.cs",
-              "RelativeToolTip": "WpfApp1\\Models\\UserApi.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAQwBgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T14:26:35.101Z",
+              "WhenOpened": "2024-12-13T04:51:36.41Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "signUpControl.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\hmk904\\MATAU\\WpfApp1\\Controls\\signUpControl.xaml.cs",
-              "RelativeDocumentMoniker": "WpfApp1\\Controls\\signUpControl.xaml.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\hmk904\\MATAU\\WpfApp1\\Controls\\signUpControl.xaml.cs",
-              "RelativeToolTip": "WpfApp1\\Controls\\signUpControl.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFgAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T14:09:37.186Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "RestApi.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\hmk904\\MATAU\\WpfApp1\\Models\\RestApi.cs",
-              "RelativeDocumentMoniker": "WpfApp1\\Models\\RestApi.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\hmk904\\MATAU\\WpfApp1\\Models\\RestApi.cs",
-              "RelativeToolTip": "WpfApp1\\Models\\RestApi.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T04:27:57.87Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "2.jpg - Bitmap [200x133, 24\uBE44\uD2B8, JPG]",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\hmk904\\MATAU\\WpfApp1\\Resources\\2.jpg",
-              "RelativeDocumentMoniker": "WpfApp1\\Resources\\2.jpg",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\hmk904\\MATAU\\WpfApp1\\Resources\\2.jpg - Bitmap [200x133, 24\uBE44\uD2B8, JPG]",
-              "RelativeToolTip": "WpfApp1\\Resources\\2.jpg - Bitmap [200x133, 24\uBE44\uD2B8, JPG]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
-              "WhenOpened": "2024-12-13T01:56:51.585Z",
-              "EditorCaption": " - Bitmap [200x133, 24\uBE44\uD2B8, JPG]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "loginControl.xaml",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\hmk904\\MATAU\\WpfApp1\\Controls\\loginControl.xaml",
-              "RelativeDocumentMoniker": "WpfApp1\\Controls\\loginControl.xaml",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\hmk904\\MATAU\\WpfApp1\\Controls\\loginControl.xaml",
-              "RelativeToolTip": "WpfApp1\\Controls\\loginControl.xaml",
+              "Title": "DetailView.xaml",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\hmk904\\MATAU\\WpfApp1\\Views\\DetailView.xaml",
+              "RelativeDocumentMoniker": "WpfApp1\\Views\\DetailView.xaml",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\hmk904\\MATAU\\WpfApp1\\Views\\DetailView.xaml",
+              "RelativeToolTip": "WpfApp1\\Views\\DetailView.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-13T00:30:41.875Z",
+              "WhenOpened": "2024-12-13T04:51:20.618Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "TokenApi.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\hmk904\\MATAU\\WpfApp1\\Models\\TokenApi.cs",
-              "RelativeDocumentMoniker": "WpfApp1\\Models\\TokenApi.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\hmk904\\MATAU\\WpfApp1\\Models\\TokenApi.cs",
-              "RelativeToolTip": "WpfApp1\\Models\\TokenApi.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAEwCsAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T14:14:18.091Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "UserDTO.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\hmk904\\MATAU\\WpfApp1\\DTO\\UserDTO.cs",
-              "RelativeDocumentMoniker": "WpfApp1\\DTO\\UserDTO.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\hmk904\\MATAU\\WpfApp1\\DTO\\UserDTO.cs",
-              "RelativeToolTip": "WpfApp1\\DTO\\UserDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T14:37:36.531Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "LoginResponseDTO.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\hmk904\\MATAU\\WpfApp1\\DTO\\LoginResponseDTO.cs",
-              "RelativeDocumentMoniker": "WpfApp1\\DTO\\LoginResponseDTO.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\hmk904\\MATAU\\WpfApp1\\DTO\\LoginResponseDTO.cs",
-              "RelativeToolTip": "WpfApp1\\DTO\\LoginResponseDTO.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAIwBMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T14:12:38.863Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "signUpControl.xaml",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\hmk904\\MATAU\\WpfApp1\\Controls\\signUpControl.xaml",
-              "RelativeDocumentMoniker": "WpfApp1\\Controls\\signUpControl.xaml",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\hmk904\\MATAU\\WpfApp1\\Controls\\signUpControl.xaml",
-              "RelativeToolTip": "WpfApp1\\Controls\\signUpControl.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-12T14:09:38.28Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "LoginDTO.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\hmk904\\MATAU\\WpfApp1\\DTO\\LoginDTO.cs",
-              "RelativeDocumentMoniker": "WpfApp1\\DTO\\LoginDTO.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\hmk904\\MATAU\\WpfApp1\\DTO\\LoginDTO.cs",
-              "RelativeToolTip": "WpfApp1\\DTO\\LoginDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T14:37:37.544Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "SignUpApi.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\hmk904\\MATAU\\WpfApp1\\Models\\SignUpApi.cs",
-              "RelativeDocumentMoniker": "WpfApp1\\Models\\SignUpApi.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\hmk904\\MATAU\\WpfApp1\\Models\\SignUpApi.cs",
-              "RelativeToolTip": "WpfApp1\\Models\\SignUpApi.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T14:32:13.662Z"
             }
           ]
         }

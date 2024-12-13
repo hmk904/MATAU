@@ -18,7 +18,7 @@ namespace WpfApp1
             base.OnStartup(e);
 
             // MainView를 시작 창으로 설정
-            var mainView = new Views.DetailView();
+            var mainView = new Views.MainView();
             mainView.Show();
         }
     }
