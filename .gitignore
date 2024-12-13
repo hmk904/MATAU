@@ -18,6 +18,6 @@ Thumbs.db
 Desktop.ini
 
 # WpApp1 폴더 내부에서 제외할 파일
-WpApp1/bin/
-WpApp1/obj/
-WpApp1/Debug/
+WpfApp1/bin/
+WpfApp1/obj/
+WpfApp1/Debug/

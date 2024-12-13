@@ -1,0 +1,88 @@
+﻿<UserControl x:Class="WpfApp1.Controls.signUpControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <Grid>
+        <!-- 열 구분 -->
+        <Grid.ColumnDefinitions>
+            <!--<ColumnDefinition Width="1*" />-->
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- 좌측: 회원가입 안내 -->
+        <Border Grid.Column="0" Background="#A0D4B8">
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock Text="회원가입" FontSize="30" FontWeight="Bold" Foreground="White" Margin="0,0,0,10" />
+                <TextBlock Text="회원가입을 원하시면 아래 정보를 입력해주세요." 
+                           FontSize="14" Foreground="White" TextAlignment="Center" Margin="0,0,0,20" />
+            </StackPanel>
+        </Border>
+
+        <!-- 우측: 회원가입 폼 -->
+        <Border Grid.Column="1" Background="White">
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="400">
+                <TextBlock Text="회원가입" FontSize="30" FontWeight="Bold" Foreground="#4CAF50" Margin="0,0,0,20" />
+
+                <!-- ID -->
+                <Grid Margin="0,0,0,10">
+                    <TextBox x:Name="txtID" Width="300" Height="40" FontSize="14" />
+                    <TextBlock Text="ID" Foreground="Gray" VerticalAlignment="Center" Margin="5,0,0,0"
+               IsHitTestVisible="False" />
+                </Grid>
+
+                <!-- Password -->
+                <Grid Margin="0,0,0,10">
+                    <PasswordBox x:Name="txtPW" Width="300" Height="40" FontSize="14" PasswordChanged="txtPW_PasswordChanged" />
+                    <TextBlock Text="PW" Foreground="Gray" VerticalAlignment="Center" Margin="5,0,0,0"
+                               IsHitTestVisible="False" />
+                </Grid>
+
+                <!-- Re-Password -->
+                <Grid Margin="0,0,0,10">
+                    <PasswordBox x:Name="txtRePW" Width="300" Height="40" FontSize="14" PasswordChanged="txtRePW_PasswordChanged" />
+                    <TextBlock Text="RE-PW" Foreground="Gray" VerticalAlignment="Center" Margin="5,0,0,0"
+                               IsHitTestVisible="False" />
+                    
+                </Grid>
+                <!-- 비밀번호 확인 결과 -->
+                <TextBlock x:Name="lblPasswordCheck" Width="300" FontSize="14" Foreground="Red" Margin="0,0,0,10" />
+
+
+                <!-- NAME -->
+                <Grid Margin="0,0,0,10">
+                    <TextBox x:Name="txtName" Width="300" Height="40" FontSize="14" />
+                    <TextBlock Text="NAME" Foreground="Gray" VerticalAlignment="Center" Margin="5,0,0,0"
+                IsHitTestVisible="False" />
+                </Grid>
+
+                <!-- NICKNAME -->
+                <Grid Margin="0,0,0,10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"/>
+                        <!-- TextBlock 공간 -->
+                        <ColumnDefinition Width="*"/>
+                        <!-- TextBox 공간 -->
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Text="NICKNAME"
+                               Foreground="Gray" VerticalAlignment="Center" 
+                               HorizontalAlignment="Left" Grid.Column="0" Margin="5,0,0,0"/>
+                    <TextBox x:Name="txtNickName" Height="40" FontSize="14" Grid.ColumnSpan="2" Margin="86,0,50,0" />
+                </Grid>
+
+                <!-- Buttons -->
+                <Button x:Name="btnRegister" Content="회원가입" Width="150" Height="40" 
+                        Background="#4CAF50" Foreground="White" FontSize="16" 
+                        BorderBrush="#4CAF50" BorderThickness="2" Cursor="Hand" Margin="0,0,0,10" 
+                        Click="registButton_Click"/>
+                <Button Content="뒤로가기" Width="150" Height="40" 
+                        Background="White" Foreground="#4CAF50" FontSize="16" 
+                        BorderBrush="#4CAF50" BorderThickness="2" Cursor="Hand" Click="BackToLogin" />
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>
