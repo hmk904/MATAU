@@ -3,56 +3,72 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WpfApp1.Views" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="MainView" Height="720" Width="1080">
+        Title="MainView" Height="720" Width="1200">
     <Grid Margin="10">
-        
+
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
             <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
 
         <!-- 타이틀 영역 -->
-        <Border Grid.Row="0" Grid.ColumnSpan="5" Background="#A0D4B8" Padding="16" CornerRadius="8">
-            <TextBlock x:Name="matauHome" Text="MATAU | HOME" Margin="16,0,0,0" FontSize="30px" FontWeight="Bold" Foreground="White" />
+        <Border Grid.Row="0" Background="#A0D4B8" Padding="16" CornerRadius="8">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <!-- 타이틀 텍스트 -->
+                <TextBlock Text="MATAU | HOME" Margin="16,0,0,0" FontSize="30px" FontWeight="Bold" Foreground="White" />
+
+                <!-- 마이페이지 버튼 -->
+                <Button Grid.Column="1"
+                        Content="마이페이지"
+                        Width="120"
+                        Height="40"
+                        Margin="0,0,16,0"
+                        Background="White"
+                        Foreground="#4CAF50"
+                        BorderBrush="#4CAF50"
+                        FontWeight="Bold"
+                        Click="MyPageButton_Click" />
+            </Grid>
         </Border>
 
-        <!-- 카드 1-->
-        <materialDesign:Card Width="200" Height="180" Grid.Column="0" Grid.Row="1">
-            <Grid Cursor="" Margin="0,0,0,0">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="140" />
-                    <RowDefinition Height="50" />
-                </Grid.RowDefinitions>
-                <Image Height="140"
-            Source="/Resources/1.jpg"
-            Stretch="UniformToFill" />
-                <Button Grid.Row="0"
-             Margin="0,0,16,-20"
-             HorizontalAlignment="Right"
-             VerticalAlignment="Bottom"
-             Style="{StaticResource MaterialDesignFloatingActionMiniButton}" Background="#A0D4B8" BorderBrush="#A0D4B8">
-                    <materialDesign:PackIcon Kind="GarageVariant" />
-                </Button>
-                <StackPanel Grid.Row="1"
-                 Margin="8,10,8,0">
-                    <TextBlock FontWeight="Bold" FontSize="20px">
-             서울특별시
-                    </TextBlock>
-                </StackPanel>
-            </Grid>
-        </materialDesign:Card>
+        <!-- 카드 리스트 -->
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+            <ItemsControl ItemsSource="{Binding Cards}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel HorizontalAlignment="Left" />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <materialDesign:Card Width="200" Height="180" Margin="10">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="140" />
+                                    <RowDefinition Height="50" />
+                                </Grid.RowDefinitions>
 
+                                <!-- 이미지 바인딩 -->
+                                <Image Height="140"
+                                       Source="{Binding ImagePath}"
+                                       Stretch="UniformToFill" />
+
+                                <!-- 텍스트 바인딩 -->
+                                <StackPanel Grid.Row="1" Margin="8,10,8,0">
+                                    <TextBlock FontWeight="Bold" FontSize="20px" Text="{Binding Province}" />
+                                </StackPanel>
+                            </Grid>
+                        </materialDesign:Card>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
     </Grid>
 </Window>

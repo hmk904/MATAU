@@ -40,30 +40,26 @@ namespace WpfApp1.Controls
             {
                 // 로그인 요청
                 LoginResponseDTO response = await loginApi.LoginUser(loginInfo);
-                //MessageBox.Show($"로그인 성공! 토큰: {response.Token}");
+                TokenSave.SetToken(response.Token); // 토큰 저장
+                TokenSave.SetUserId(response.UserId); // ID 저장
                 MessageBox.Show($"로그인 성공! NickName : {response.Nickname}, user ID : {response.UserId}, Roles : {response.Roles}");
 
-                // 사용자 정보 가져오기
-                var userApi = new UserApi(); // UserApi는 별도로 구현된 사용자 정보 가져오는 클래스
-                userApi.SetToken(response.Token); // 토큰 설정
-                UserDTO userInfo = await userApi.GetUserInfoAsync(response.UserId);
-               // MessageBox.Show($"로그인 성공! NickName : {userInfo.Nickname}, user ID : {userInfo.UserId}, Roles : {userInfo.Roles}");
-
-                // MainView 열기 및 사용자 정보 전달
-                var mainView = new Views.MainView
-                {
-                    DataContext = userInfo // 사용자 정보를 View에 전달
-                };
+                // MainView 열기
+                var mainView = new Views.MainView();
                 mainView.Show();
 
                 // 현재 창 닫기
                 Window.GetWindow(this)?.Close();
+
+                
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"로그인 실패: {ex.Message}");
             }
         }
+
 
 
     }

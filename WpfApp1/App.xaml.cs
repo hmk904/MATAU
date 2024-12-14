@@ -13,13 +13,6 @@ namespace WpfApp1
     /// </summary>
     public partial class App : Application
     {
-        protected override void OnStartup(StartupEventArgs e)
-        {
-            base.OnStartup(e);
-
-            // MainView를 시작 창으로 설정
-            var mainView = new Views.MainView();
-            mainView.Show();
-        }
+        
     }
 }
