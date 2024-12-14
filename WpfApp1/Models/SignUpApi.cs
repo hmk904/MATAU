@@ -24,7 +24,7 @@ namespace WpfApp1.Models
                 var content = new StringContent(jsonData, Encoding.UTF8, "application/json");
 
                 // POST 요청 전송 (공통 경로 + 추가 엔드포인트)
-                HttpResponseMessage response = await httpClient.PostAsync("register", content);
+                HttpResponseMessage response = await httpClient.PostAsync("User/register", content);
 
                 if (response.IsSuccessStatusCode)
                 {

@@ -21,7 +21,7 @@ namespace WpfApp1.Models
 
         public async Task<UserDTO> GetUserInfoAsync(int id)
         {
-            HttpResponseMessage response = await httpClient.GetAsync($"{id}");
+            HttpResponseMessage response = await httpClient.GetAsync($"User/{id}");
 
             if (response.IsSuccessStatusCode)
             {

@@ -23,7 +23,7 @@ namespace WpfApp1.Models
 
                 var content = new StringContent(jsonData, Encoding.UTF8, "application/json");
 
-                HttpResponseMessage response = await httpClient.PostAsync("login", content);
+                HttpResponseMessage response = await httpClient.PostAsync("User/login", content);
 
                 if (response.IsSuccessStatusCode)
                 {
