@@ -37,11 +37,9 @@ namespace WpfApp1.Views
 
         private async void LoadData()
         {
-            Console.WriteLine("LoadData 호 출~!~!~!~!~!~!~!~!~!");
 
             if (isDataLoaded)
             {
-                Console.WriteLine("LoadData() 이미 실행됨, 호출 종료");
                 return;
             }
 
@@ -51,10 +49,8 @@ namespace WpfApp1.Views
             try
             {
                 var houseData = await houseApi.GetAllHousesAsync();
-                Console.WriteLine($"HouseApi 데이터 로드 완료, 총 {houseData.Count}개 항목");
 
                 var imagePaths = GetImagePaths();
-                Console.WriteLine($"이미지 경로 로드 완료, 총 {imagePaths.Count}개 파일");
 
                 // 상위 15개 항목만 처리
                 var limitedHouseData = houseData.Take(16).ToList();
@@ -67,7 +63,6 @@ namespace WpfApp1.Views
                     // 이미지 경로가 비어 있으면 추가하지 않음
                     if (string.IsNullOrEmpty(imagePath))
                     {
-                        Console.WriteLine($"Card Skipped: Province = {house.Province}, ImagePath is empty");
                         continue;
                     }
 
@@ -77,17 +72,14 @@ namespace WpfApp1.Views
                         ImagePath = imagePath
                     };
 
-                    Console.WriteLine($"Card Added: Province = {card.Province}, ImagePath = {card.ImagePath}");
                     Cards.Add(card);
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"데이터 로드 중 오류 발생: {ex.Message}");
                 MessageBox.Show($"데이터 로드 실패: {ex.Message}");
             }
 
-            Console.WriteLine("LoadData() 호출 종료 !~!~!~!~!~!~!~!~");
         }
 
 
@@ -95,16 +87,12 @@ namespace WpfApp1.Views
         // Resources 폴더의 이미지 경로 리스트 가져오기
         private List<string> GetImagePaths()
         {
-            string folderPath = Path.Combine("C:\\Users\\user\\source\\repos\\hmk904\\MATAU\\WpfApp1", "Resources");
+            string basePath = AppDomain.CurrentDomain.BaseDirectory;
+
+            // 두 단계 상위로 이동 후 정확한 폴더 접근
+            string folderPath = Path.GetFullPath(Path.Combine(basePath, @"..\..\..\WpfApp1\Resources"));
+
             var files = Directory.GetFiles(folderPath, "*-1.*").OrderBy(f => f).ToList();
-
-            Console.WriteLine($"GetImagePaths(): 총 {files.Count}개 파일 로드");
-
-            foreach (var file in files)
-            {
-                Console.WriteLine($"파일 경로: {file}");
-            }
-
 
             return files;
         }
