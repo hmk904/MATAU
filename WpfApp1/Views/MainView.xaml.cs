@@ -16,7 +16,6 @@ namespace WpfApp1.Views
     {
         public ObservableCollection<CardDTO> Cards { get; set; } // UI에 표시할 데이터 리스트
         private readonly HouseApi houseApi; // HouseApi 인스턴스
-
         private bool isDataLoaded = false; // 데이터 중복 로드 방지 플래그
 
         public MainView()
@@ -32,46 +31,43 @@ namespace WpfApp1.Views
 
             // 데이터 로드
             LoadData();
-            
         }
 
         private async void LoadData()
         {
-
             if (isDataLoaded)
-            {
                 return;
-            }
 
             isDataLoaded = true;
             Cards.Clear(); // 기존 데이터를 제거하여 중복 추가 방지
 
             try
             {
+                // 서버에서 HouseDTO 리스트 가져오기
                 var houseData = await houseApi.GetAllHousesAsync();
 
-                var imagePaths = GetImagePaths();
-
-                // 상위 15개 항목만 처리
+                // 상위 16개 항목만 처리
                 var limitedHouseData = houseData.Take(16).ToList();
 
                 for (int i = 0; i < limitedHouseData.Count; i++)
                 {
                     var house = limitedHouseData[i];
-                    var imagePath = i < imagePaths.Count ? imagePaths[i] : string.Empty;
 
-                    // 이미지 경로가 비어 있으면 추가하지 않음
-                    if (string.IsNullOrEmpty(imagePath))
-                    {
+                    // Province에 맞는 -1 이미지 가져오기
+                    var imagePaths = GetImagePaths(house.Province);
+
+                    // 이미지가 없으면 스킵
+                    if (imagePaths.Count == 0)
                         continue;
-                    }
 
                     var card = new CardDTO
                     {
+                        Id = house.Id,            // HouseDTO의 ID 설정
                         Province = house.Province,
-                        ImagePath = imagePath
+                        ImagePath = imagePaths[0] // 첫 번째 이미지 경로만 사용
                     };
 
+                    // 카드 리스트에 추가
                     Cards.Add(card);
                 }
             }
@@ -79,32 +75,70 @@ namespace WpfApp1.Views
             {
                 MessageBox.Show($"데이터 로드 실패: {ex.Message}");
             }
-
         }
 
-
-
         // Resources 폴더의 이미지 경로 리스트 가져오기
-        private List<string> GetImagePaths()
+        private List<string> GetImagePaths(string province)
         {
+            // 1. 기본 경로 설정
             string basePath = AppDomain.CurrentDomain.BaseDirectory;
-
-            // 두 단계 상위로 이동 후 정확한 폴더 접근
             string folderPath = Path.GetFullPath(Path.Combine(basePath, @"..\..\..\WpfApp1\Resources"));
 
-            var files = Directory.GetFiles(folderPath, "*-1.*").OrderBy(f => f).ToList();
+            // 2. 폴더 유효성 검사
+            if (!Directory.Exists(folderPath))
+            {
+                MessageBox.Show($"Resources 폴더를 찾을 수 없습니다: {folderPath}");
+                return new List<string>();
+            }
 
-            return files;
+            // 3. 파일 필터링
+            string[] allFiles = Directory.GetFiles(folderPath);
+            List<string> filteredFiles = new List<string>();
+
+            foreach (string file in allFiles)
+            {
+                string fileName = Path.GetFileName(file);
+
+                // 파일명이 province와 -1 패턴을 포함하는지 확인
+                if (fileName.StartsWith(province) && fileName.Contains("-1"))
+                {
+                    filteredFiles.Add(file);
+                }
+            }
+
+            // 4. 파일 정렬
+            filteredFiles.Sort();
+
+            return filteredFiles;
         }
 
         private void MyPageButton_Click(object sender, RoutedEventArgs e)
         {
             int loginUserId = TokenSave.GetUserId();
-            // 마이페이지 View 열기
             var myPage = new MyView(loginUserId);
             myPage.Show();
         }
 
-    }
+        private async void Card_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            if (sender is FrameworkElement frameworkElement && frameworkElement.DataContext is CardDTO card)
+            {
+                Console.WriteLine($"클릭된 카드 ID: {card.Id}");
 
+                try
+                {
+                    var detailApi = new DetailApi();
+                    var houseDetail = await detailApi.GetHouseDetailAsync(card.Id);
+
+                    // DetailView에 houseDetail 전달
+                    var detailView = new DetailView(houseDetail);
+                    detailView.Show();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"상세 정보를 가져오는 데 실패했습니다: {ex.Message}");
+                }
+            }
+        }
+    }
 }
