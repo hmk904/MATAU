@@ -113,6 +113,7 @@
     <Compile Include="DTO\LoginDTO.cs" />
     <Compile Include="DTO\LoginResponseDTO.cs" />
     <Compile Include="DTO\SignUpDTO.cs" />
+    <Compile Include="DTO\UnitDTO.cs" />
     <Compile Include="DTO\UserDTO.cs" />
     <Compile Include="Models\HouseApi.cs" />
     <Compile Include="Models\LoginApi.cs" />
@@ -120,6 +121,7 @@
     <Compile Include="Models\SignUpApi.cs" />
     <Compile Include="Models\TokenSave.cs" />
     <Compile Include="Models\DetailApi.cs" />
+    <Compile Include="Models\UnitApi.cs" />
     <Compile Include="Models\UserApi.cs" />
     <Compile Include="UserLogin.xaml.cs">
       <DependentUpon>UserLogin.xaml</DependentUpon>

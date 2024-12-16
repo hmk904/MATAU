@@ -112,13 +112,6 @@ namespace WpfApp1.Views
             return filteredFiles;
         }
 
-        private void MyPageButton_Click(object sender, RoutedEventArgs e)
-        {
-            int loginUserId = TokenSave.GetUserId();
-            var myPage = new MyView(loginUserId);
-            myPage.Show();
-        }
-
         private async void Card_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             if (sender is FrameworkElement frameworkElement && frameworkElement.DataContext is CardDTO card)
@@ -139,6 +132,14 @@ namespace WpfApp1.Views
                     MessageBox.Show($"상세 정보를 가져오는 데 실패했습니다: {ex.Message}");
                 }
             }
+        }
+
+        // 마이페이지 가기
+        private void MyPageButton_Click(object sender, RoutedEventArgs e)
+        {
+            int loginUserId = TokenSave.GetUserId();
+            var myPage = new MyView(loginUserId);
+            myPage.Show();
         }
     }
 }
