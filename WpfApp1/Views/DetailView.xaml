@@ -55,9 +55,15 @@
             </Grid>
 
             <!-- 데이터 그리드 -->
-            <Border Grid.Row="1" Background="White" BorderBrush="Black" BorderThickness="1" Margin="5">
-                <TextBlock Text="데이터 그리드" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16" />
-            </Border>
+            <DataGrid Grid.Row="1" x:Name="StudentList" Background="White" BorderBrush="Black" BorderThickness="1" Margin="5">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="크기" Binding="{Binding Path=Size}" Width="100"/>
+                    <DataGridTextColumn Header="예약상태" Binding="{Binding Path=Status}" Width="130"/>
+                    <DataGridTextColumn Header="예약날짜" Binding="{Binding Path=StartDate}" Width="180"/>
+                    <DataGridTextColumn Header="예약종료날짜" Binding="{Binding Path=EndDate}" Width="180"/>
+                    <DataGridTextColumn Header="가격" Binding="{Binding Path=Price}" Width="*"/>
+                </DataGrid.Columns>
+            </DataGrid>
 
             <!-- 안내문 -->
             <Border Grid.Row="2" Background="White" BorderBrush="Black" BorderThickness="1" Margin="5">

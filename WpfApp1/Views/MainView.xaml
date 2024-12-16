@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="MainView" Height="720" Width="1200">
+        Title="MainView" Height="733" Width="1139">
     <Grid Margin="10">
 
         <Grid.RowDefinitions>

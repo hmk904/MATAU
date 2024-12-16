@@ -77,6 +77,12 @@ namespace WpfApp1.Views
             }
         }
 
+        private void UnitList(object sender , RoutedEventArgs e)
+        {
+            List<UnitDTO> unitList = new List<UnitDTO>();
+
+        }
+
         private void ResetButtonStyle(Button button)
         {
             button.Background = Brushes.White;
