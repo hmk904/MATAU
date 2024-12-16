@@ -16,6 +16,7 @@ namespace WpfApp1.Views
     {
         public ObservableCollection<CardDTO> Cards { get; set; } // UI에 표시할 데이터 리스트
         private readonly HouseApi houseApi; // HouseApi 인스턴스
+        private readonly UnitApi unitApi;
         private bool isDataLoaded = false; // 데이터 중복 로드 방지 플래그
 
         public MainView()
@@ -24,6 +25,9 @@ namespace WpfApp1.Views
 
             // HouseApi 초기화
             houseApi = new HouseApi();
+
+            // UnitApi
+            unitApi = new UnitApi();
 
             // 카드 리스트 초기화
             Cards = new ObservableCollection<CardDTO>();
@@ -123,9 +127,21 @@ namespace WpfApp1.Views
                     var detailApi = new DetailApi();
                     var houseDetail = await detailApi.GetHouseDetailAsync(card.Id);
 
+                    // UnitDTO에서 HouseId와 일치하는 데이터 가져오기
+                    List<UnitDTO> unitData = await unitApi.GetUnitDataAsync(card.Id); // UnitDTO 데이터를 가져오는 메서드
+
+
+
+                    foreach (var unit in unitData)
+                    {
+                        Console.WriteLine($"ID: {unit.Id}, HouseId: {unit.HouseId}, Size: {unit.Size}, Price: {unit.Price}");
+                    }
                     // DetailView에 houseDetail 전달
-                    var detailView = new DetailView(houseDetail);
+                    var detailView = new DetailView(houseDetail, unitData);
                     detailView.Show();
+
+                    this.Close();
+
                 }
                 catch (Exception ex)
                 {
@@ -140,6 +156,8 @@ namespace WpfApp1.Views
             int loginUserId = TokenSave.GetUserId();
             var myPage = new MyView(loginUserId);
             myPage.Show();
+
+            this.Close();
         }
     }
 }

@@ -18,18 +18,21 @@ namespace WpfApp1.Models
             userToken = token;
             httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", userToken);
         }
-        public async Task<UnitDTO> GetHouseDetailAsync(int id)
+        public async Task<List<UnitDTO>> GetUnitDataAsync(int id)
         {
             HttpResponseMessage response = await httpClient.GetAsync($"Unit/house/{id}");
 
             if (response.IsSuccessStatusCode)
             {
                 string responseBody = await response.Content.ReadAsStringAsync();
+                Console.WriteLine(responseBody); // JSON 데이터 출력
+
                 var options = new JsonSerializerOptions
                 {
                     PropertyNameCaseInsensitive = true
                 };
-                return JsonSerializer.Deserialize<UnitDTO>(responseBody, options);
+                // 배열로 역직렬화
+                return JsonSerializer.Deserialize<List<UnitDTO>>(responseBody, options);
             }
             else
             {
