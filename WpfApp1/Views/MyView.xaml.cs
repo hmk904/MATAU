@@ -41,13 +41,25 @@ namespace WpfApp1.Views
                 DataContext = userInfo;
 
                 // 사용자 정보 확인
-                MessageBox.Show($"사용자 정보:\nNickname: {userInfo.Nickname}\nRoles: {userInfo.Roles}");
+                Console.WriteLine($"사용자 정보:\nNickname: {userInfo.Nickname}\nRoles: {userInfo.Roles}");
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"사용자 정보를 로드하는 데 실패했습니다: {ex.Message}");
             }
         }
+        private void MyViewButton_Click(object sender, RoutedEventArgs e)
+        {
+            // 뒤로가기 버튼 클릭 시 창 닫기
+            this.Hide(); // 창 숨기기
+
+            MainView mainView = new MainView();
+            Application.Current.MainWindow = mainView;
+            mainView.Show();
+
+            this.Close(); // 완전히 닫기
+        }
+
     }
 
 }
