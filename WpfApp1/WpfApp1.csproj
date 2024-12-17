@@ -108,6 +108,8 @@
     <Compile Include="Controls\signUpControl.xaml.cs">
       <DependentUpon>signUpControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DTO\BookUnitReqDTO.cs" />
+    <Compile Include="DTO\BookUnitResponseDTO.cs" />
     <Compile Include="DTO\CardDTO.cs" />
     <Compile Include="DTO\HouseDTO.cs" />
     <Compile Include="DTO\LoginDTO.cs" />
@@ -115,6 +117,7 @@
     <Compile Include="DTO\SignUpDTO.cs" />
     <Compile Include="DTO\UnitDTO.cs" />
     <Compile Include="DTO\UserDTO.cs" />
+    <Compile Include="Models\BookingsApi.cs" />
     <Compile Include="Models\HouseApi.cs" />
     <Compile Include="Models\LoginApi.cs" />
     <Compile Include="Models\RestApi.cs" />

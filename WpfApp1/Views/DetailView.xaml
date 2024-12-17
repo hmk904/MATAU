@@ -3,7 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
         xmlns:materialDesign="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         WindowStartupLocation="CenterScreen"
-        Title="DetailView" Height="720" Width="1200">
+       
+        Title="DetailView" Height="740" Width="1200">
     <Grid Margin="10">
         <!-- 열 구성 -->
         <Grid.ColumnDefinitions>
@@ -119,44 +120,94 @@
                         <Setter Property="TextBlock.TextAlignment" Value="Center"/>
                     </Style>
                 </DataGrid.CellStyle>
+                
+                
 
                 <DataGrid.Columns>
+                    <DataGridTemplateColumn Header="선택" Width="50">
+                        <!-- 헤더 체크박스 -->
+                        <DataGridTemplateColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <CheckBox IsChecked="{Binding IsAllItems1Selected, Mode=TwoWay, RelativeSource={RelativeSource AncestorType=Window}}"
+                                          Checked="HeaderCheckBox_Checked"
+                                          Unchecked="HeaderCheckBox_Checked">
+                                    <CheckBox.Style>
+                                        <Style TargetType="CheckBox">
+                                            <Style.Triggers>
+                                                <!-- Status가 InUse이면 체크박스 비활성화 -->
+                                                <DataTrigger Binding="{Binding Status}" Value="InUse">
+                                                    <Setter Property="IsEnabled" Value="False" />
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </CheckBox.Style>
+                                </CheckBox>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.HeaderTemplate>
+
+                        <!-- 셀 체크박스 -->
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <CheckBox IsChecked="{Binding IsSelected, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                          Checked="CheckBox_Checked"
+                                          Unchecked="CheckBox_Checked">
+                                    <CheckBox.Style>
+                                        <Style TargetType="CheckBox">
+                                            <Style.Triggers>
+                                                <!-- Status가 InUse이면 체크박스 비활성화 -->
+                                                <DataTrigger Binding="{Binding Status}" Value="InUse">
+                                                    <Setter Property="IsEnabled" Value="False" />
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </CheckBox.Style>
+                                </CheckBox>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+
+
 
                     <!-- 크기 컬럼 -->
-                    <DataGridTextColumn Header="크기" Binding="{Binding Size}"
-                            EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}"
-                            ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
-                            Width="100" />
+                    <DataGridTextColumn Header="창고번호" 
+                                        Binding="{Binding CombinedId}"
+                                        EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}"
+                                        ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
+                                        Width="100" />
+                    <!-- 크기 컬럼 -->
+                    <DataGridTextColumn Header="크기" 
+                                        Binding="{Binding Size}"
+                                        EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}"
+                                        ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
+                                        Width="100" />
 
                     <!-- 예약상태 컬럼 -->
                     <materialDesign:DataGridTextColumn Header="예약상태"
-                                           Binding="{Binding Status}"
-                                           EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}"
-                                           ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
-                                           Width="130" />
+                                                       Binding="{Binding Status}"
+                                                       EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}"
+                                                       ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
+                                                       Width="130" />
 
                     <!-- 예약날짜 컬럼 -->
-                    <DataGridTextColumn 
-                        Header="예약날짜" 
-                        Binding="{Binding StartDate, StringFormat=\{0:yyyy-MM-dd\}}"
-                        EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}"
-                        ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
-                        Width="180" />
+                    <DataGridTextColumn Header="예약날짜" 
+                                        Binding="{Binding StartDate, StringFormat=\{0:yyyy-MM-dd\}}"
+                                        EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}"
+                                        ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
+                                        Width="110" />
 
-                    <DataGridTextColumn 
-                        Header="예약종료날짜" 
-                        Binding="{Binding EndDate, StringFormat=\{0:yyyy-MM-dd\}}"
-                        EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}"
-                        ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
-                        Width="180" />
+                    <DataGridTextColumn Header="예약종료날짜" 
+                                        Binding="{Binding EndDate, StringFormat=\{0:yyyy-MM-dd\}}"
+                                        EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}"
+                                        ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
+                                        Width="110" />
 
                     <!-- 가격 컬럼 -->
-                    <DataGridTextColumn 
-                        Header="가격"
-                        Binding="{Binding Price}"
-                        EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}"
-                        ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
-                        Width="*" />
+                    <DataGridTextColumn Header="가격"
+                                        Binding="{Binding Price}"
+                                        EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}"
+                                        ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
+                                        Width="*" />
                 </DataGrid.Columns>
             </DataGrid>
 
@@ -171,14 +222,14 @@
         <Grid Grid.Row="1" Grid.Column="1" Margin="5">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
-                <!-- 시청역점 -->
+                <!-- 주소 -->
                 <RowDefinition Height="*" />
                 <!-- 이용 시작일 -->
                 <RowDefinition Height="*" />
-                <!-- 날짜 선택 -->
+                <!-- 기간 텍스트 -->
                 <RowDefinition Height="*" />
                 <!-- 사이즈 -->
-      
+                <RowDefinition Height="*" />
                 <!-- 가격 -->
                 <RowDefinition Height="*" />
                 <!-- 예약 버튼 -->
@@ -195,31 +246,48 @@
             <StackPanel Grid.Row="1" Margin="0,5" Orientation="Horizontal" HorizontalAlignment="Center">
                 <StackPanel Margin="0,0,10,0">
                     <TextBlock Text="예약시작일" FontSize="14" Margin="0,0,0,5" />
-                    <DatePicker Width="165" BorderThickness="2" Style="{StaticResource MaterialDesignOutlinedDatePicker}" />
+                    <DatePicker x:Name="startDatePicker" 
+                                Width="165"
+                                BorderThickness="2" 
+                                Style="{StaticResource MaterialDesignOutlinedDatePicker}" 
+                                SelectedDateChanged="DatePicker_SelectedDateChanged"/>
                 </StackPanel>
                 <StackPanel>
                     <TextBlock Text="예약종료일" FontSize="14" Margin="0,0,0,5" />
-                    <DatePicker Width="165" BorderThickness="2" Style="{StaticResource MaterialDesignOutlinedDatePicker}" />
+                    <DatePicker x:Name="endDatePicker"  
+                                Width="165"
+                                BorderThickness="2"
+                                Style="{StaticResource MaterialDesignOutlinedDatePicker}" 
+                                SelectedDateChanged="DatePicker_SelectedDateChanged"/>
                 </StackPanel>
             </StackPanel>
 
+            <!-- 기간 텍스트: 별도 행에 배치 -->
+            <TextBlock Grid.Row="2"
+                       x:Name="DurationDays"
+                       Text="기간 : 0일"
+                       FontSize="16"
+                       Margin="0,10" 
+                       HorizontalAlignment="Center" 
+                       VerticalAlignment="Center" />
+            
             <!-- 사이즈 -->
-            <WrapPanel Grid.Row="2" Margin="5,5" HorizontalAlignment="Center" Width="340" Height="200">
-                <Button x:Name="smallButton" Click="Button_Click" Content="소" Width="90" Height="80" Margin="11,5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="white" Foreground="#4CAF50" BorderThickness="2" BorderBrush="#4CAF50"/>
-                <Button x:Name="middleButton" Click="Button_Click" Content="중" Width="90" Height="80" Margin="11,5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="white" Foreground="#4CAF50" BorderThickness="2" BorderBrush="#4CAF50"/>
-                <Button x:Name="largeButton" Click="Button_Click" Content="대" Width="90" Height="80" Margin="11,5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="white" Foreground="#4CAF50" BorderThickness="2" BorderBrush="#4CAF50"/>
+            <WrapPanel Grid.Row="3" Margin="5,5" HorizontalAlignment="Center" Width="340" Height="200">
+                <Button x:Name="smallButton" Click="Button_Click" Content="소" Width="90" Height="70" Margin="11,5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="white" Foreground="#4CAF50" BorderThickness="2" BorderBrush="#4CAF50"/>
+                <Button x:Name="middleButton" Click="Button_Click" Content="중" Width="90" Height="70" Margin="11,5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="white" Foreground="#4CAF50" BorderThickness="2" BorderBrush="#4CAF50"/>
+                <Button x:Name="largeButton" Click="Button_Click" Content="대" Width="90" Height="70" Margin="11,5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="white" Foreground="#4CAF50" BorderThickness="2" BorderBrush="#4CAF50"/>
             </WrapPanel>
 
             <!-- 가격 -->
-            <Border Grid.Row="3" Background="White" BorderBrush="Black" BorderThickness="1" Padding="5" Margin="0,10">
+            <Border Grid.Row="4" Background="White" BorderBrush="Black" BorderThickness="1" Padding="5" Margin="0,10">
                 <TextBlock x:Name="priceBlock" Text="가격" VerticalAlignment="Center" HorizontalAlignment="Center" />
             </Border>
 
             <!-- 예약 버튼 -->
-            <Button Grid.Row="4" Content="예약버튼" Height="50" Background="#4CAF50" Foreground="White" FontSize="16" Margin="0,5" />
+            <Button x:Name="BookUnitReqButton" Click="BookUnitReqButton_Click" Grid.Row="5" Content="예약버튼" Height="50" Background="#4CAF50" Foreground="White" FontSize="16" Margin="0,5" />
 
             <!-- 대표 전화번호 -->
-            <Border Grid.Row="5" Background="White" BorderBrush="Black" BorderThickness="1" Padding="5">
+            <Border Grid.Row="6" Background="White" BorderBrush="Black" BorderThickness="1" Padding="5">
                 <TextBlock Text="대표 전화번호" VerticalAlignment="Center" HorizontalAlignment="Center" />
             </Border>
         </Grid>
