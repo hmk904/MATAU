@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -20,7 +21,8 @@ namespace WpfApp1.Views
             InitializeComponent();
             houseInfo = houseDetail;
 
-            unitList = units;
+            // 중복 제거
+            unitList = units.ToList(); // 그대로 리스트 사용
             UnitDataList.ItemsSource = unitList;
 
             DataContext = houseInfo;
@@ -68,6 +70,8 @@ namespace WpfApp1.Views
             return filteredFiles;
         }
 
+        
+
         private void SetImageSources(List<string> imageFiles)
         {
             if (imageFiles.Count > 0) image1.Source = new BitmapImage(new Uri(imageFiles[0]));
@@ -83,7 +87,7 @@ namespace WpfApp1.Views
             if (sender is Button clickedButton)
             {
                 ApplySelectedStyle(clickedButton);
-                UpdatePriceBlock(clickedButton.Name);
+                //UpdatePriceBlock(clickedButton.Name);
             }
         }
 
@@ -108,21 +112,113 @@ namespace WpfApp1.Views
             button.BorderBrush = Brushes.Green;
         }
 
-        private void UpdatePriceBlock(string buttonName)
+        // 전체 선택 체크박스 상태 처리
+        private void HeaderCheckBox_Checked(object sender, RoutedEventArgs e)
         {
-            switch (buttonName)
+            if (sender is CheckBox headerCheckBox)
             {
-                case "smallButton":
-                    priceBlock.Text = $"가격: {houseInfo.PriceS}원";
-                    break;
-                case "middleButton":
-                    priceBlock.Text = $"가격: {houseInfo.PriceM}원";
-                    break;
-                case "largeButton":
-                    priceBlock.Text = $"가격: {houseInfo.PriceL}원";
-                    break;
+                bool isChecked = headerCheckBox.IsChecked ?? false;
+
+                foreach (var unit in unitList)
+                {
+                    // Status가 InUse인 항목은 선택 상태를 변경하지 않음
+                    if (unit.Status != "InUse")
+                    {
+                        unit.IsSelected = isChecked;
+                    }
+                }
+
+                UnitDataList.Items.Refresh(); // UI 새로고침
+                UpdatePriceBlock();           // 가격 업데이트
             }
         }
+
+        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            // 개별 체크박스 변경 시 가격 업데이트
+            if (!_isUpdating)
+            {
+                UpdatePriceBlock();
+            }
+        }
+
+        private void DatePicker_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (startDatePicker.SelectedDate.HasValue && endDatePicker.SelectedDate.HasValue)
+            {
+                DateTime startDate = startDatePicker.SelectedDate.Value;
+                DateTime endDate = endDatePicker.SelectedDate.Value;
+
+                // 종료일이 시작일보다 빠를 경우 처리
+                if (endDate >= startDate)
+                {
+                    int days = (endDate - startDate).Days;
+                    DurationDays.Text = $"기간 : {days}일";
+                }
+                else
+                {
+                    DurationDays.Text = "종료일은 시작일 이후여야 합니다.";
+                }
+            }
+            else
+            {
+                DurationDays.Text = "기간 : 0일";
+            }
+
+            // **기간 변경 시 가격 업데이트 호출**
+            UpdatePriceBlock();
+        }
+
+
+        // 기간 계산 메서드
+        private int CalculateDurationDays(DateTime? startDate, DateTime? endDate)
+        {
+            if (startDate.HasValue && endDate.HasValue && endDate > startDate)
+            {
+                return Math.Max(1, (endDate.Value - startDate.Value).Days); // 최소 28일 보장
+            }
+            return 1; // 기본값 1일
+            
+        }
+
+        private bool _isUpdating = false;
+
+        private void UpdatePriceBlock()
+        {
+            if (_isUpdating) return; // 중복 호출 방지
+            _isUpdating = true;
+
+            try
+            {
+                // 체크된 항목 필터링
+                var selectedUnits = unitList.Where(unit => unit.IsSelected).ToList();
+
+                if (!selectedUnits.Any())
+                {
+                    priceBlock.Text = "총 가격: 0원";
+                    return;
+                }
+
+                // 체크된 항목들의 총 가격 합산 (단일 가격)
+                int totalBasePrice = selectedUnits.Sum(unit => unit.Price);
+
+                // 기간 계산
+                int duration = CalculateDurationDays(startDatePicker.SelectedDate, endDatePicker.SelectedDate);
+
+                // 총 가격 = 총 가격 합산 * 기간
+                int totalPrice = totalBasePrice * duration;
+
+                // 결과 표시
+                priceBlock.Text = $"총 가격: {totalPrice:N0}원";
+
+            }
+            finally
+            {
+                _isUpdating = false;
+            }
+        }
+
+
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
@@ -148,6 +244,66 @@ namespace WpfApp1.Views
 
             this.Close(); // 완전히 닫기
         }
+
+        private async void BookUnitReqButton_Click(object sender, RoutedEventArgs e)
+        {
+            // 체크된 항목 필터링
+            var selectedUnits = unitList.Where(unit => unit.IsSelected).ToList();
+
+            if (!selectedUnits.Any())
+            {
+                MessageBox.Show("예약할 항목을 선택해주세요.", "알림", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            try
+            {
+                BookingsApi bookingsApi = new BookingsApi();
+
+                foreach (var unit in selectedUnits)
+                {
+                    var bookingRequest = new BookUnitReqDTO
+                    {
+                        UserId = TokenSave.GetUserId(), // 로그인된 사용자 ID
+                        HouseId = unit.HouseId,
+                        UnitSize = unit.Size,
+                        StartDate = unit.StartDate ?? DateTime.Now, // 시작일이 없으면 현재 날짜
+                        DurationDays = CalculateDurationDays(unit.StartDate, unit.EndDate),
+                        UserNote = "예약 요청" // 기본 메모
+                    };
+
+                    // API 호출
+                    var response = await bookingsApi.BookUnitReq(bookingRequest);
+                    Console.WriteLine($"서버 응답: {response}");
+                }
+
+                MessageBox.Show("예약이 신청되었습니다.", "성공", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"예약 중 오류 발생: {ex.Message}", "오류", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private bool _isAllItems1Selected;
+        public bool IsAllItems1Selected
+        {
+            get => _isAllItems1Selected;
+            set
+            {
+                if (_isAllItems1Selected != value)
+                {
+                    _isAllItems1Selected = value;
+                    foreach (var unit in unitList)
+                    {
+                        unit.IsSelected = value;
+                    }
+                    UnitDataList.Items.Refresh();
+                }
+            }
+        }
+
+
 
     }
 }
