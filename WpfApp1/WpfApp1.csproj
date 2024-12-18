@@ -120,6 +120,7 @@
     <Compile Include="Models\BookingsApi.cs" />
     <Compile Include="Models\HouseApi.cs" />
     <Compile Include="Models\LoginApi.cs" />
+    <Compile Include="Models\Pricing.cs" />
     <Compile Include="Models\RestApi.cs" />
     <Compile Include="Models\SignUpApi.cs" />
     <Compile Include="Models\TokenSave.cs" />

@@ -199,14 +199,12 @@ namespace WpfApp1.Views
                     return;
                 }
 
-                // 체크된 항목들의 총 가격 합산 (단일 가격)
-                int totalBasePrice = selectedUnits.Sum(unit => unit.Price);
-
                 // 기간 계산
                 int duration = CalculateDurationDays(startDatePicker.SelectedDate, endDatePicker.SelectedDate);
 
-                // 총 가격 = 총 가격 합산 * 기간
-                int totalPrice = totalBasePrice * duration;
+                // 체크된 항목들의 총 가격 계산
+                int totalPrice = selectedUnits
+                    .Sum(unit => Pricing.CalculateBookingCharge(unit.Price, duration));
 
                 // 결과 표시
                 priceBlock.Text = $"총 가격: {totalPrice:N0}원";
@@ -217,8 +215,6 @@ namespace WpfApp1.Views
                 _isUpdating = false;
             }
         }
-
-
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
@@ -302,8 +298,5 @@ namespace WpfApp1.Views
                 }
             }
         }
-
-
-
     }
 }
