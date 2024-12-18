@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaterialDesignThemes.Wpf;
+using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -54,7 +55,8 @@ namespace WpfApp1.Controls
 
                 if (success)
                 {
-                    MessageBox.Show("회원가입이 완료되었습니다!");
+                    // 회원가입 성공 시 모달 창 표시
+                    await SignUpDialogHost.ShowDialog(null);
 
                     DependencyObject parent = this;
                     while (parent != null && !(parent is UserLogin))
@@ -73,6 +75,12 @@ namespace WpfApp1.Controls
             {
                 MessageBox.Show($"회원가입 실패: {ex.Message}");
             }
+        }
+
+        private void CloseDialog_Click(object sender, RoutedEventArgs e)
+        {
+            // 모달 창 닫기
+            DialogHost.CloseDialogCommand.Execute(null, SignUpDialogHost);
         }
 
         // 비밀번호 확인 실시간 검증

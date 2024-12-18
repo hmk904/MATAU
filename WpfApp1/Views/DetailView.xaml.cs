@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaterialDesignThemes.Wpf;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -302,7 +303,8 @@ namespace WpfApp1.Views
                     Console.WriteLine($"서버 응답: {response}");
                 }
 
-                MessageBox.Show("예약이 신청되었습니다.", "성공", MessageBoxButton.OK, MessageBoxImage.Information);
+                // 예약 성공 시 모달 창 열기
+                await ReservationDialogHost.ShowDialog(null);
             }
             catch (Exception ex)
             {
@@ -327,6 +329,13 @@ namespace WpfApp1.Views
                 userNote.Foreground = Brushes.LightGray; // 다시 Placeholder 색상 적용
             }
         }
+
+        private void CloseDialog_Click(object sender, RoutedEventArgs e)
+        {
+            // 모달 창 닫기
+            DialogHost.CloseDialogCommand.Execute(null, ReservationDialogHost);
+        }
+
 
 
 
