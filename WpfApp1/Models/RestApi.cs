@@ -14,7 +14,7 @@ namespace WpfApp1.Models
         {
             httpClient = new HttpClient
             {
-                BaseAddress = new Uri("http://3.38.45.83//api/") // 공통 API 기본 URL 설정
+                BaseAddress = new Uri("http://3.38.45.83/api/") // 공통 API 기본 URL 설정
             };
         }
     }
