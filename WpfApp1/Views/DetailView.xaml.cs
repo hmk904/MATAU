@@ -149,10 +149,11 @@ namespace WpfApp1.Views
                 DateTime startDate = startDatePicker.SelectedDate.Value;
                 DateTime endDate = endDatePicker.SelectedDate.Value;
 
-                // 종료일이 시작일보다 빠를 경우 처리
+                Console.WriteLine($"StartDate: {startDate}, EndDate: {endDate}");
+
                 if (endDate >= startDate)
                 {
-                    int days = (endDate - startDate).Days;
+                    int days = (endDate - startDate).Days + 1;
                     DurationDays.Text = $"기간 : {days}일";
                 }
                 else
@@ -162,24 +163,26 @@ namespace WpfApp1.Views
             }
             else
             {
+                Console.WriteLine("StartDate 또는 EndDate가 null입니다.");
                 DurationDays.Text = "기간 : 0일";
             }
 
-            // **기간 변경 시 가격 업데이트 호출**
             UpdatePriceBlock();
         }
+
 
 
         // 기간 계산 메서드
         private int CalculateDurationDays(DateTime? startDate, DateTime? endDate)
         {
-            if (startDate.HasValue && endDate.HasValue && endDate > startDate)
+            if (startDate.HasValue && endDate.HasValue)
             {
-                return Math.Max(1, (endDate.Value - startDate.Value).Days); // 최소 28일 보장
+                int days = (endDate.Value - startDate.Value).Days + 1; // 동일한 날짜도 1일로 간주
+                return Math.Max(1, days);
             }
             return 1; // 기본값 1일
-            
         }
+
 
         private bool _isUpdating = false;
 
@@ -262,6 +265,14 @@ namespace WpfApp1.Views
 
                 foreach (var unit in selectedUnits)
                 {
+                    int durationDays = CalculateDurationDays(unit.StartDate, unit.EndDate);
+
+                    // DatePicker의 값을 가져와 unit에 업데이트
+                    unit.StartDate = startDatePicker.SelectedDate ?? DateTime.Now;
+                    unit.EndDate = (endDatePicker.SelectedDate ?? unit.StartDate.Value).AddDays(0);
+
+                    Console.WriteLine($"Unit StartDate: {unit.StartDate}, Unit EndDate: {unit.EndDate}");
+
                     var bookingRequest = new BookUnitReqDTO
                     {
                         UserId = TokenSave.GetUserId(), // 로그인된 사용자 ID
@@ -271,6 +282,9 @@ namespace WpfApp1.Views
                         DurationDays = CalculateDurationDays(unit.StartDate, unit.EndDate),
                         UserNote = "예약 요청" // 기본 메모
                     };
+
+                    Console.WriteLine($"StartDate: {bookingRequest.StartDate},  DurationDays: {bookingRequest.DurationDays}");
+
 
                     // API 호출
                     var response = await bookingsApi.BookUnitReq(bookingRequest);
