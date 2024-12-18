@@ -360,8 +360,9 @@
                     Content="예약버튼" 
                     Background="#4CAF50" 
                     Foreground="White" 
-                    FontSize="16" 
-                    Margin="0,22,0,23" />
+                    FontSize="16"
+                    Height="50"
+                     />
 
             <!-- 대표 전화번호 -->
             <Border Grid.Row="7" Background="White" BorderBrush="Black" BorderThickness="1" Padding="5">
