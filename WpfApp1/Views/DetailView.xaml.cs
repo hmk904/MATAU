@@ -79,6 +79,15 @@ namespace WpfApp1.Views
             if (imageFiles.Count > 2) image3.Source = new BitmapImage(new Uri(imageFiles[2]));
         }
 
+        private void FilterUnitsBySize(string size)
+        {
+            // 선택된 사이즈에 따라 리스트 필터링
+            var filteredUnits = unitList.Where(unit => unit.Size == size).ToList();
+
+            // 필터링된 데이터를 데이터그리드에 적용
+            UnitDataList.ItemsSource = filteredUnits;
+        }
+
         // 버튼 클릭 이벤트
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -87,7 +96,13 @@ namespace WpfApp1.Views
             if (sender is Button clickedButton)
             {
                 ApplySelectedStyle(clickedButton);
-                //UpdatePriceBlock(clickedButton.Name);
+                // 버튼 이름에 따라 필터링 적용
+                if (clickedButton == smallButton)
+                    FilterUnitsBySize("S");
+                else if (clickedButton == middleButton)
+                    FilterUnitsBySize("M");
+                else if (clickedButton == largeButton)
+                    FilterUnitsBySize("L");
             }
         }
 
@@ -202,14 +217,12 @@ namespace WpfApp1.Views
                     return;
                 }
 
-                // 체크된 항목들의 총 가격 합산 (단일 가격)
-                int totalBasePrice = selectedUnits.Sum(unit => unit.Price);
-
                 // 기간 계산
                 int duration = CalculateDurationDays(startDatePicker.SelectedDate, endDatePicker.SelectedDate);
 
-                // 총 가격 = 총 가격 합산 * 기간
-                int totalPrice = totalBasePrice * duration;
+                // 체크된 항목들의 총 가격 계산
+                int totalPrice = selectedUnits
+                    .Sum(unit => Pricing.CalculateBookingCharge(unit.Price, duration));
 
                 // 결과 표시
                 priceBlock.Text = $"총 가격: {totalPrice:N0}원";
@@ -220,8 +233,6 @@ namespace WpfApp1.Views
                 _isUpdating = false;
             }
         }
-
-
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
@@ -280,7 +291,7 @@ namespace WpfApp1.Views
                         UnitSize = unit.Size,
                         StartDate = unit.StartDate ?? DateTime.Now, // 시작일이 없으면 현재 날짜
                         DurationDays = CalculateDurationDays(unit.StartDate, unit.EndDate),
-                        UserNote = "예약 요청" // 기본 메모
+                        UserNote = userNote.Text // 기본 메모
                     };
 
                     Console.WriteLine($"StartDate: {bookingRequest.StartDate},  DurationDays: {bookingRequest.DurationDays}");
@@ -299,21 +310,21 @@ namespace WpfApp1.Views
             }
         }
 
-        private bool _isAllItems1Selected;
-        public bool IsAllItems1Selected
+        private void UserNote_GotFocus(object sender, RoutedEventArgs e)
         {
-            get => _isAllItems1Selected;
-            set
+            if (userNote.Text == "요청사항 적어주세요")
             {
-                if (_isAllItems1Selected != value)
-                {
-                    _isAllItems1Selected = value;
-                    foreach (var unit in unitList)
-                    {
-                        unit.IsSelected = value;
-                    }
-                    UnitDataList.Items.Refresh();
-                }
+                userNote.Text = "";
+                userNote.Foreground = Brushes.Black; // 입력 시 텍스트 색상 변경
+            }
+        }
+
+        private void UserNote_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(userNote.Text))
+            {
+                userNote.Text = "요청사항 적어주세요";
+                userNote.Foreground = Brushes.LightGray; // 다시 Placeholder 색상 적용
             }
         }
 
