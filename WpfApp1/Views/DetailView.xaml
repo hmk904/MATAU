@@ -6,7 +6,10 @@
         WindowStartupLocation="CenterScreen"
        
         Title="DetailView" Height="740" Width="1200">
-    <Grid Margin="10">
+
+    <!-- DialogHost가 전체 UI를 감싸도록 수정 -->
+    <materialDesign:DialogHost x:Name="ReservationDialogHost">
+        <Grid Margin="10">
         <!-- 열 구성 -->
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*" />
@@ -369,5 +372,17 @@
                 <TextBlock Text="☎ 032-743-5000" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30" FontWeight="Bold"/>
             </Border>
         </Grid>
+       
     </Grid>
+        <!-- Dialog Content -->
+        <materialDesign:DialogHost.DialogContent>
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20">
+                <TextBlock Text="예약이 성공적으로 완료되었습니다!" 
+                           FontSize="18" FontWeight="Bold" Foreground="#4CAF50" 
+                           HorizontalAlignment="Center" Margin="0,10"/>
+                <Button Content="확인" Width="100" Height="30" Background="#4CAF50" Foreground="White"
+                        HorizontalAlignment="Center" Click="CloseDialog_Click"/>
+            </StackPanel>
+        </materialDesign:DialogHost.DialogContent>
+    </materialDesign:DialogHost>
 </Window>

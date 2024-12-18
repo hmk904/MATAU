@@ -38,8 +38,8 @@
             <!-- Dialog Content -->
             <materialDesign:DialogHost.DialogContent>
                 <StackPanel Margin="20" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock x:Name="ModalMessage" Text="로그인 성공!" FontSize="16" 
-                       Foreground="Black" HorizontalAlignment="Center" Margin="0,10"/>
+                    <TextBlock x:Name="ModalMessage" Text="로그인 성공!" FontSize="18" FontWeight="Bold"
+                       Foreground="#4CAF50" HorizontalAlignment="Center" Margin="0,10"/>   
                     <Button Content="확인" Width="80" Click="CloseDialog_Click" 
                     HorizontalAlignment="Center" Background="#4CAF50" Foreground="White"/>
                 </StackPanel>
