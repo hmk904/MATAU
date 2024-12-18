@@ -4,34 +4,47 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WpfApp1.Controls"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+
     <Grid Background="White">
-        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="400">
-            <TextBlock Text="로그인" FontSize="30" FontWeight="Bold" Foreground="#4CAF50" Margin="0,0,0,20" />
+        <materialDesign:DialogHost x:Name="LoginDialogHost">
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="400">
+                <TextBlock Text="로그인" FontSize="30" FontWeight="Bold" Foreground="#4CAF50" Margin="0,0,0,20" />
 
-            <!-- ID 입력 -->
-            <Grid Margin="0,0,0,10">
-                <TextBox x:Name="txtID" Width="300" Height="40" FontSize="14" />
-                <TextBlock Text="ID" Foreground="Gray" VerticalAlignment="Center" Margin="5,0,0,0"
-                           IsHitTestVisible="False"
-                           />
-            </Grid>
+                <!-- ID 입력 -->
+                <Grid Margin="0,0,0,10">
+                    <TextBox x:Name="txtID" Width="300" Height="40" FontSize="14" />
+                    <TextBlock Text="ID" Foreground="Gray" VerticalAlignment="Center" Margin="5,0,0,0"
+                       IsHitTestVisible="False"/>
+                </Grid>
 
-            <!-- PW 입력 -->
-            <Grid Margin="0,0,0,20">
-                <PasswordBox x:Name="txtPW" Width="300" Height="40" />
-                <TextBlock Text="PW" Foreground="Gray" VerticalAlignment="Center" Margin="5,0,0,0"
-                           IsHitTestVisible="False"
-                           />
-            </Grid>
+                <!-- PW 입력 -->
+                <Grid Margin="0,0,0,20">
+                    <PasswordBox x:Name="txtPW" Width="300" Height="40" />
+                    <TextBlock Text="PW" Foreground="Gray" VerticalAlignment="Center" Margin="5,0,0,0"
+                       IsHitTestVisible="False"/>
+                </Grid>
 
-            <!-- 로그인 버튼 -->
-            <Button Content="로그인" Width="150" Height="40" 
-                    Background="#4CAF50" Foreground="White" FontSize="16" 
-                    BorderBrush="#4CAF50" BorderThickness="2" Cursor="Hand" Margin="0,0,0,10"
-                    Click="loginButton_Click"/>
-            
-        </StackPanel>
+                <!-- 로그인 버튼 -->
+                <Button Content="로그인" Width="150" Height="40" 
+                Background="#4CAF50" Foreground="White" FontSize="16" 
+                BorderBrush="#4CAF50" BorderThickness="2" Cursor="Hand" Margin="0,0,0,10"
+                Click="loginButton_Click"/>
+            </StackPanel>
+
+            <!-- Dialog Content -->
+            <materialDesign:DialogHost.DialogContent>
+                <StackPanel Margin="20" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBlock x:Name="ModalMessage" Text="로그인 성공!" FontSize="16" 
+                       Foreground="Black" HorizontalAlignment="Center" Margin="0,10"/>
+                    <Button Content="확인" Width="80" Click="CloseDialog_Click" 
+                    HorizontalAlignment="Center" Background="#4CAF50" Foreground="White"/>
+                </StackPanel>
+            </materialDesign:DialogHost.DialogContent>
+        </materialDesign:DialogHost>
+
     </Grid>
 </UserControl>

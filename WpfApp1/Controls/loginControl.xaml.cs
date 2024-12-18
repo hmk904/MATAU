@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WpfApp1.DTO;
 using WpfApp1.Models;
+using MaterialDesignThemes.Wpf; // MaterialDesign 추가
 
 namespace WpfApp1.Controls
 {
@@ -39,26 +40,35 @@ namespace WpfApp1.Controls
             try
             {
                 // 로그인 요청
-                LoginResponseDTO response = await loginApi.LoginUser(loginInfo);
-                TokenSave.SetToken(response.Token); // 토큰 저장
-                TokenSave.SetUserId(response.UserId); // ID 저장
-                MessageBox.Show($"로그인 성공! NickName : {response.Nickname}, user ID : {response.UserId}, Roles : {response.Roles}");
+                var response = await loginApi.LoginUser(loginInfo);
+                TokenSave.SetToken(response.Token);
+                TokenSave.SetUserId(response.UserId);
 
-                // MainView 열기
-                var mainView = new Views.MainView();
-                mainView.Show();
+                // 모달 메시지 설정
+                ModalMessage.Text = $"로그인 성공!";
 
-                // 현재 창 닫기
-                Window.GetWindow(this)?.Close();
-
-                
-
+                // DialogHost 모달 열기
+                await LoginDialogHost.ShowDialog(null);
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"로그인 실패: {ex.Message}");
             }
         }
+
+        private void CloseDialog_Click(object sender, RoutedEventArgs e)
+        {
+            // 모달 창 닫기
+            DialogHost.CloseDialogCommand.Execute(null, null);
+
+            // MainView 열기
+            var mainView = new Views.MainView();
+            mainView.Show();
+
+            // 현재 창 닫기
+            Window.GetWindow(this)?.Close();
+        }
+
 
 
 
