@@ -48,8 +48,14 @@ namespace WpfApp1.Views
 
         private string GetResourceFolderPath()
         {
+            //string basePath = AppDomain.CurrentDomain.BaseDirectory;
+            //return Path.Combine(basePath, @"..\..\..\WpfApp1\Resources");
+
+            // 실행 파일 기준 Resources 폴더 경로 설정
             string basePath = AppDomain.CurrentDomain.BaseDirectory;
-            return Path.Combine(basePath, @"..\..\..\WpfApp1\Resources");
+            string resourceFolderPath = Path.Combine(basePath, "Resources");
+
+            return resourceFolderPath;
         }
 
         private List<string> GetImageFiles(string folderPath, string province)

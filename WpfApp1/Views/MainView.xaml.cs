@@ -120,7 +120,10 @@ namespace WpfApp1.Views
         {
             // 1. 기본 경로 설정
             string basePath = AppDomain.CurrentDomain.BaseDirectory;
-            string folderPath = Path.GetFullPath(Path.Combine(basePath, @"..\..\..\WpfApp1\Resources"));
+            //string folderPath = Path.GetFullPath(Path.Combine(basePath, @"..\..\..\WpfApp1\Resources"));
+
+            // 실행 파일 경로를 기준으로 Resources 폴더 경로 설정
+            string folderPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources");
 
             // 2. 폴더 유효성 검사
             if (!Directory.Exists(folderPath))
