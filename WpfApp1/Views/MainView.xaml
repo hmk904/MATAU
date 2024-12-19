@@ -20,13 +20,29 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
 
                 <!-- 타이틀 텍스트 -->
-                <TextBlock Text="MATAU | HOME" Margin="16,0,0,0" FontSize="30px" FontWeight="Bold" Foreground="White" />
+                <TextBlock Grid.Column="0"
+                           Text="MATAJU | HOME"
+                           Margin="16,0,0,0"
+                           FontSize="30"
+                           FontWeight="Bold"
+                           Foreground="White"
+                           VerticalAlignment="Center" />
+
+                <!-- 닉네임 텍스트 -->
+                <TextBlock Grid.Column="1"
+                           x:Name="NicknameTextBlock"
+                           Margin="16,0,18,0"
+                           FontSize="18"
+                           FontWeight="Bold"
+                           Foreground="White"
+                           VerticalAlignment="Center" />
 
                 <!-- 마이페이지 버튼 -->
-                <Button Grid.Column="1"
+                <Button Grid.Column="2"
                         Content="마이페이지"
                         Width="120"
                         Height="40"
@@ -35,6 +51,7 @@
                         Foreground="#4CAF50"
                         BorderBrush="#4CAF50"
                         FontWeight="Bold"
+                        VerticalAlignment="Center"
                         Click="MyPageButton_Click" />
             </Grid>
         </Border>
