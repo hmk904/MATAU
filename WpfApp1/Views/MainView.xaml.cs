@@ -17,6 +17,7 @@ namespace WpfApp1.Views
         public ObservableCollection<CardDTO> Cards { get; set; } // UI에 표시할 데이터 리스트
         private readonly HouseApi houseApi; // HouseApi 인스턴스
         private readonly UnitApi unitApi;
+        private readonly UserApi userApi;
         private bool isDataLoaded = false; // 데이터 중복 로드 방지 플래그
 
         public MainView()
@@ -29,12 +30,45 @@ namespace WpfApp1.Views
             // UnitApi
             unitApi = new UnitApi();
 
+            // UserApi
+            userApi = new UserApi();
+
             // 카드 리스트 초기화
             Cards = new ObservableCollection<CardDTO>();
             this.DataContext = this;
 
             // 데이터 로드
             LoadData();
+
+            LoadNickname();
+        
+        }
+
+        private async void LoadNickname()
+        {
+            try
+            {
+                // 로그인한 사용자 ID 가져오기
+                int userId = TokenSave.GetUserId();
+
+                // UserApi를 통해 사용자 정보 요청
+                var userInfo = await userApi.GetUserInfoAsync(userId);
+
+                // 닉네임 설정
+                if (userInfo != null && !string.IsNullOrEmpty(userInfo.Nickname))
+                {
+                    NicknameTextBlock.Text = $"{userInfo.Nickname} 님";
+                }
+                else
+                {
+                    NicknameTextBlock.Text = "게스트 님"; // 기본값
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"닉네임을 가져오는 데 실패했습니다: {ex.Message}");
+                NicknameTextBlock.Text = "게스트 님"; // 기본값
+            }
         }
 
         private async void LoadData()

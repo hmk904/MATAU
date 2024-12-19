@@ -28,7 +28,7 @@
                 </Grid.ColumnDefinitions>
 
                 <!-- 타이틀 텍스트 -->
-                <TextBlock x:Name="matauHome" Text="MATAU | 마이페이지" 
+                <TextBlock x:Name="matauHome" Text="MATAJU | 마이페이지" 
                            FontSize="30" FontWeight="Bold" Foreground="White"
                            VerticalAlignment="Center" />
 
